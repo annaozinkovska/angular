@@ -1,0 +1,11 @@
+<div class="body">
+    <div class="body__user" #body__user>
+        <div class="picture"><img [src]="avatar"></div>
+        <div class="post-text">
+            <h2>{{name}}</h2>
+            <p>{{status}}</p>
+        </div>
+    </div>
+    <button type="button" (click)="clearBody()">Remove user</button>
+</div>
+
