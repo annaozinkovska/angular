@@ -1,11 +1,16 @@
-<div class="body">
-    <div class="body__user" #body__user>
-        <div class="picture"><img [src]="avatar"></div>
-        <div class="post-text">
+<div class="wrapper" >
+    <div class="body">
+        <div class="picture">
+            <img [src]="url" alt=""> 
+            <p *ngIf="state; else nstate" style="color: green;">Online</p>
+            <ng-template #nstate>
+                <p style="color: red;">Ofline</p>
+            </ng-template>
+        </div>
+        <div  class="user-data">
             <h2>{{name}}</h2>
-            <p>{{status}}</p>
+            <div class="post-text">{{status}}</div>
         </div>
     </div>
-    <button type="button" (click)="clearBody()">Remove user</button>
+    <button  class="network" (click)= "state= !state">{{state ? "Online" : "Ofline" }} </button>
 </div>
-

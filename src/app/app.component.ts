@@ -5,16 +5,20 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  user = {
-    name: "",
-    status: "",
-    avatar: "",
+export class AppComponent  {
+  users = [
+    {name: "Mike", status: "I'm learning angular", url: "https://i.pravatar.cc/150?img=12",},
+    {name: "Nikola", status: "Playing piano", url: "https://i.pravatar.cc/150?img=7",},
+    {name: "Bob", status: "Translations from Chinese", url: "https://i.pravatar.cc/150?img=11", },
+    {name: "Anna ", status: "Pretty girl", url: "https://i.pravatar.cc/150?img=1",},
+];
+
+
+  search = ''
+  searching(event: any){
+    this.search = event.target.value
   }
-  addUser(newUser: any){
-    this.user.name = newUser.name;
-    this.user.status = newUser.status;
-    this.user.avatar = newUser.avatar;
-    
-  }
+
+
+
 }

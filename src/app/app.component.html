@@ -1,4 +1,15 @@
 <main>
-  <app-add-user (onUser)="addUser($event)"></app-add-user>
-  <app-user [name]="user.name" [status]="user.status" [avatar]="user.avatar"></app-user>
-</main>
+  <div class="filter">  
+    <h2 class="filter-title">FILTER POSTS BY NAME</h2>
+    <input type="text" (input)="searching($event)" [value]="search" placeholder="Enter text...">
+  </div>
+  <app-user 
+  *ngFor="let user of users | sortByName "
+  [url]="user.url"
+  [name]="user.name" 
+  [status]="user.status"
+ 
+  ></app-user>
+
+</main>  <!-- [name]="users.name" ,
+  [status]="users.status" -->

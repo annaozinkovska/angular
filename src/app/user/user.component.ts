@@ -1,4 +1,4 @@
-import { Component, Input, Renderer2} from '@angular/core';
+import { Component, Input,} from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -6,17 +6,9 @@ import { Component, Input, Renderer2} from '@angular/core';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent {
-  constructor(private renderer: Renderer2) { }
-  @Input() name = '';
-  @Input() status = '';
-  @Input() avatar = '';
-
-  clearBody() {
-    this.name = '';
-    this.status = '';
-    this.avatar = '';
-    const img = document.querySelector('.picture img');
-    this.renderer.setStyle(img, 'width', '0px');
-    this.renderer.setStyle(img, 'height', '0px');
-  }
+  @Input() name= ''
+  @Input() status= ''
+  @Input() url= ''
+state= false
+userOfline = true
 }
